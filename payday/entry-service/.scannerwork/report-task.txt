@@ -1,0 +1,6 @@
+projectKey=1171055_tmdei_graph_federation_AYEG0WaQHZ8xBp_M5efX
+serverUrl=http://localhost:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9000/dashboard?id=1171055_tmdei_graph_federation_AYEG0WaQHZ8xBp_M5efX
+ceTaskId=AYEIAbJGLj_pvUGEmRSe
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYEIAbJGLj_pvUGEmRSe

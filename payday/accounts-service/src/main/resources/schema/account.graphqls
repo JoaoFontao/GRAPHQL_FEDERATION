@@ -1,0 +1,25 @@
+type Account @key(fields: "id") {
+    id: ID!
+    customer: Int!
+    accn: String!
+    name: String!
+    type: String!
+    date_of_creation: Int!
+    status: Int!
+}
+
+type Customer @key(fields: "id") @extends {
+    id: ID! @external
+    debitAccounts: [Account]
+    creditAccounts: [Account]
+}
+
+type Mutation {
+    createAccount(name: String!, type: String!): Account
+    disableAccount(id: ID!): Account
+}
+
+type Query {
+    accounts(type: String!): [Account]
+    account(id: ID!): Account
+}

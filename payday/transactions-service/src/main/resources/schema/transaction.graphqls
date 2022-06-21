@@ -1,0 +1,20 @@
+type Transaction @key(fields: "id"){
+    id: ID!
+    customer: Int!
+    account: Int!
+    description: String
+    date_of_transaction: String
+    amount: Int!
+}
+
+type Account @key(fields: "id") @extends {
+    id: ID! @external
+    transactions: [Transaction]
+}
+
+type Query {
+    transactions(account: ID!): [Transaction]
+}
+type Mutation {
+    createTransaction(account: ID!, amount: Int!, description: String): Transaction
+}

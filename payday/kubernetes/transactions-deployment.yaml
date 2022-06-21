@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transactions-service
+  labels:
+    app: payday
+spec:
+  # replicas: 1
+  selector:
+    matchLabels:
+      app: payday
+  template:
+    metadata:
+      labels:
+        app: payday
+    spec:
+      containers:
+      - name: transactions-service
+        image: malikaliyev94/transactions-service:latest
+        ports:
+        - containerPort: 9002
+          protocol: TCP
+      - name: mongo
+        image: mongo
+        ports:
+        - containerPort: 27017
+          protocol: TCP	
